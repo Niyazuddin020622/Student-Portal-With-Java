@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+/* Footer Styling */
+.footer {
+  background-color: #333; /* Dark background for footer */
+  color: #fff; /* White text for contrast */
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #f1c40f; /* Change color on hover */
+}
+
+.social-icons {
+  margin: 20px 0;
+}
+
+.social-icon {
+  font-size: 24px;
+  margin: 0 15px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2); /* Enlarge icons on hover */
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer .text-white {
+  color: #fff !important;
+}
+
+.footer .text-white:hover {
+  color: #f1c40f !important;
+}

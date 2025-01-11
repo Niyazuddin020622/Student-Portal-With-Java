@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grades - Student Portal</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="Home.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <i class="bi bi-mortarboard-fill me-2"></i> Student Portal
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="Home.jsp">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="courses.jsp">Courses</a></li>
+                <li class="nav-item"><a class="nav-link" href="Assignment.html">Assignments</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">Grades</a></li>
+                <li class="nav-item"><a class="nav-link" href="Profile.jsp">Profile</a></li>
+            </ul>
+            <a href="Logout" class="btn btn-outline-danger">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Grades Section -->
+<section class="grades-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Your Grades</h2>
+
+        <!-- Semester Selection -->
+        <div class="mb-4">
+            <label for="semesterSelect" class="form-label">Select Semester</label>
+            <select class="form-select" id="semesterSelect">
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+            </select>
+        </div>
+
+        <!-- Table to display grades -->
+        <div class="table-responsive">
+            <table class="table table-striped" id="gradesTable">
+                <thead>
+                    <tr>
+                        <th>Course Code</th>
+                        <th>Course Name</th>
+                        <th>Credits Offered</th>
+                        <th>Credits Earned</th>
+                        <th>Grade</th>
+                        <th>Grade Points</th>
+                        <th>Backlogs</th>
+                        <th>Attempts</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Grades will be inserted dynamically here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="mt-4">
+            <h4>Summary</h4>
+            <ul class="list-group">
+                <li class="list-group-item">Total Credits Offered: <span id="totalCreditsOffered">0</span></li>
+                <li class="list-group-item">Total Credits Earned: <span id="totalCreditsEarned">0</span></li>
+                <li class="list-group-item">Total Grade Points Earned: <span id="totalGradePoints">0</span></li>
+                <li class="list-group-item">Semester Grade Point Average: <span id="semesterGPA">0.00</span></li>
+                <li class="list-group-item">Current Semester Backlogs: <span id="semesterBacklogs">0</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<div id="footer"></div> <!-- Placeholder for footer -->
+<script>
+  fetch('Footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    })
+    .catch(error => console.log('Error loading footer: ', error));
+
+  const gradesData = {
+    1: [
+        { code: "MTH101", course: "Mathematics", creditsOffered: 4, creditsEarned: 4, grade: "A", gradePoints: 40, backlogs: 0, attempts: 1 },
+        { code: "PHY101", course: "Physics", creditsOffered: 3, creditsEarned: 3, grade: "B+", gradePoints: 27, backlogs: 0, attempts: 1 },
+        { code: "CSE101", course: "Computer Programming", creditsOffered: 4, creditsEarned: 4, grade: "A-", gradePoints: 36, backlogs: 0, attempts: 1 }
+    ],
+    2: [
+        { code: "MTH201", course: "Discrete Mathematics", creditsOffered: 3, creditsEarned: 3, grade: "B", gradePoints: 24, backlogs: 0, attempts: 1 },
+        { code: "CSE201", course: "Data Structures", creditsOffered: 4, creditsEarned: 4, grade: "A", gradePoints: 40, backlogs: 0, attempts: 1 },
+        { code: "ECE201", course: "Digital Logic", creditsOffered: 3, creditsEarned: 3, grade: "A-", gradePoints: 27, backlogs: 0, attempts: 1 }
+    ],
+    3: [
+        { code: "CSE301", course: "Computer Organization", creditsOffered: 4, creditsEarned: 4, grade: "A", gradePoints: 40, backlogs: 0, attempts: 1 },
+        { code: "CSE302", course: "Algorithms", creditsOffered: 4, creditsEarned: 4, grade: "B+", gradePoints: 32, backlogs: 0, attempts: 1 },
+        { code: "CSE303", course: "Operating Systems", creditsOffered: 4, creditsEarned: 4, grade: "A-", gradePoints: 36, backlogs: 0, attempts: 1 }
+    ],
+    4: [
+        { code: "CSE401", course: "Database Management Systems", creditsOffered: 4, creditsEarned: 4, grade: "A", gradePoints: 40, backlogs: 0, attempts: 1 },
+        { code: "CSE402", course: "Computer Networks", creditsOffered: 4, creditsEarned: 4, grade: "B+", gradePoints: 32, backlogs: 0, attempts: 1 },
+        { code: "CSE403", course: "Software Engineering", creditsOffered: 3, creditsEarned: 3, grade: "A", gradePoints: 30, backlogs: 0, attempts: 1 }
+    ]
+  };
+
+  document.getElementById('semesterSelect').addEventListener('change', function() {
+    const semester = this.value;
+    const grades = gradesData[semester];
+    const tableBody = document.querySelector('#gradesTable tbody');
+
+    let totalCreditsOffered = 0;
+    let totalCreditsEarned = 0;
+    let totalGradePoints = 0;
+    let semesterBacklogs = 0;
+
+    tableBody.innerHTML = "";
+
+    grades.forEach(grade => {
+      const row = `<tr>
+                    <td>${grade.code}</td>
+                    <td>${grade.course}</td>
+                    <td>${grade.creditsOffered}</td>
+                    <td>${grade.creditsEarned}</td>
+                    <td>${grade.grade}</td>
+                    <td>${grade.gradePoints}</td>
+                    <td>${grade.backlogs}</td>
+                    <td>${grade.attempts}</td>
+                  </tr>`;
+      tableBody.insertAdjacentHTML('beforeend', row);
+
+      totalCreditsOffered += grade.creditsOffered;
+      totalCreditsEarned += grade.creditsEarned;
+      totalGradePoints += grade.gradePoints;
+      semesterBacklogs += grade.backlogs;
+    });
+
+    document.getElementById('totalCreditsOffered').textContent = totalCreditsOffered;
+    document.getElementById('totalCreditsEarned').textContent = totalCreditsEarned;
+    document.getElementById('totalGradePoints').textContent = totalGradePoints;
+    document.getElementById('semesterGPA').textContent = (totalGradePoints / totalCreditsEarned).toFixed(2);
+    document.getElementById('semesterBacklogs').textContent = semesterBacklogs;
+  });
+
+  document.getElementById('semesterSelect').dispatchEvent(new Event('change'));
+</script>
+
+<!-- Bootstrap JS and Popper -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

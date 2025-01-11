@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+/* General Reset */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f4f6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Header Styling */
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: left;
+    color: #2c3e50;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 2;
+}
+
+/* Main Styling */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Form Container */
+form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease-in-out;
+}
+
+form:hover {
+    transform: scale(1.03);
+}
+
+/* Labels */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #34495e;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input Focus */
+input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
+    outline: none;
+    background-color: #ffffff;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #2980b9;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+/* Image Section */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Make the image fill the screen */
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 90%;
+    object-fit: cover; /* Cover the entire space without distortion */
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    form {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    button[type="submit"] {
+        font-size: 1rem;
+    }
+
+    .image-container img {
+        object-fit: contain; /* Adjust the image fit for small screens */
+    }
+}

@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+  body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .hero-section {
+      background: url('https://www.ikea.com/global/assets/range-categorisation/images/work-lamps-20502.jpeg') no-repeat center center/cover;
+      color: #fff;
+      padding: 80px 0;
+      text-align: center;
+    }
+    .card {
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+    }

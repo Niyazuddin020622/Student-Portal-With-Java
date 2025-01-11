@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login Page</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <header>
+        <h1>Student Login Page</h1>
+    </header>
+    <main>
+        <form action="Login1" method="post"> <!-- Action must match @WebServlet("/Login") -->
+            <!-- Email Field -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <!-- Password Field -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+            
+            <p>I have no account? <a href="Register.html">Register Now</a></p>
+        </form>
+    </main>
+</body>
+</html>

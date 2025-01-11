@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Resources</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+  }
+
+  .hero-section {
+    background: url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 5rem 2rem;
+  }
+
+  .hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .card img {
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .card-title {
+    color: #007bff;
+  }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="Home.jsp">
+      <i class="bi bi-mortarboard-fill me-2"></i>Student Portal
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" href="Home.jsp">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="courses.jsp">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="Assignment.html">Assignments</a></li>
+        <li class="nav-item"><a class="nav-link" href="Grades.html">Grades</a></li>
+        <li class="nav-item"><a class="nav-link active" href="resources.html">Resources</a></li>
+        <li class="nav-item"><a class="nav-link" href="Profile.html">Profile</a></li>
+      </ul>
+       <a href="Logout" class="btn btn-outline-danger">Logout</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="hero-section">
+  <h1>Resources for Success</h1>
+  <p>Your one-stop destination for essential learning materials and tools</p>
+  <a href="#resources" class="btn btn-primary btn-lg">Explore Resources</a>
+</div>
+
+<!-- Resources Section -->
+<section class="py-5" id="resources">
+  <div class="container">
+    <h2 class="text-center mb-4">Top Resources</h2>
+    <div class="row">
+      <!-- E-Books -->
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <img src="https://images.unsplash.com/photo-1556155092-8707de31f9c4" class="card-img-top" alt="E-Books">
+          <div class="card-body">
+            <h5 class="card-title">E-Books</h5>
+            <p class="card-text">Download e-books covering various subjects and disciplines to enhance your knowledge.</p>
+            <a href="#" class="btn btn-outline-primary">View E-Books</a>
+          </div>
+        </div>
+      </div>
+      <!-- Video Tutorials -->
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2" class="card-img-top" alt="Video Tutorials">
+          <div class="card-body">
+            <h5 class="card-title">Video Tutorials</h5>
+            <p class="card-text">Watch comprehensive video tutorials by experts in the field.</p>
+            <a href="#" class="btn btn-outline-primary">Watch Tutorials</a>
+          </div>
+        </div>
+      </div>
+      <!-- Study Guides -->
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgqVyIQFhbCTnJaZ6sT31pheDXIcCMlI__gg&s" class="card-img-top" alt="Study Guides">
+          <div class="card-body">
+            <h5 class="card-title">Study Guides</h5>
+            <p class="card-text">Access structured guides to prepare for exams and ace your subjects.</p>
+            <a href="#" class="btn btn-outline-primary">Explore Guides</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <!-- Online Tools -->
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769" class="card-img-top" alt="Online Tools">
+          <div class="card-body">
+            <h5 class="card-title">Online Tools</h5>
+            <p class="card-text">Discover tools like calculators, citation generators, and more to simplify your work.</p>
+            <a href="#" class="btn btn-outline-primary">Try Tools</a>
+          </div>
+        </div>
+      </div>
+      <!-- Research Papers -->
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCyL28SVD4Au--xj5_g3tqC2GYvYmJ1uJG7A&s" class="card-img-top" alt="Research Papers">
+          <div class="card-body">
+            <h5 class="card-title">Research Papers</h5>
+            <p class="card-text">Read and download the latest research papers and journals in your area of interest.</p>
+            <a href="#" class="btn btn-outline-primary">View Papers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-light text-center py-3">
+  <p class="mb-0">© 2024 Student Portal | All Rights Reserved</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
